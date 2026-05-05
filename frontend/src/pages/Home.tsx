@@ -26,7 +26,9 @@ const Home: React.FC = () => {
             <FeaturesSection />
           </div>
           <HowItWorksSection />
-          <AppShowcaseSection />
+          <div id="about">
+            <AppShowcaseSection />
+          </div>
           <TestimonialsSection />
           <div id="pricing">
             <PricingPreviewSection />

@@ -2,56 +2,25 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FiCheck } from "react-icons/fi";
 
-const plans = [
-    {
-        name: "Básico",
-        price: "Gratis",
-        description: "Perfecto para propietarios individuales",
-        features: [
-            "5 escaneos por mes",
-            "Análisis IA básico",
-            "Chat con asistente",
-            "Reportes simples",
-        ],
-        gradient: "from-slate-700 to-slate-800",
-        popular: false,
-    },
-    {
-        name: "Pro",
-        price: "$9.99",
-        period: "/mes",
-        description: "Ideal para profesionales y administradores",
-        features: [
-            "Escaneos ilimitados",
-            "Análisis IA avanzado",
-            "Chat prioritario 24/7",
-            "Reportes profesionales",
-            "Historial completo",
-            "Exportación PDF",
-        ],
-        gradient: "from-sky-500 to-violet-500",
-        popular: true,
-    },
-    {
-        name: "Enterprise",
-        price: "Contactar",
-        description: "Para empresas y constructoras",
-        features: [
-            "Todo lo de Pro",
-            "API personalizada",
-            "Soporte dedicado",
-            "Integración con sistemas",
-            "Capacitación del equipo",
-        ],
-        gradient: "from-amber-500 to-orange-500",
-        popular: false,
-    },
-];
+const plan = {
+    name: "Acceso Total",
+    price: "Gratis",
+    description: "StructureScan es completamente gratuito. Disfruta de la experiencia Pro y Enterprise sin ningún costo.",
+    features: [
+        "Escaneos de estructuras ilimitados",
+        "Análisis por IA avanzado",
+        "Chat con asistente especializado",
+        "Reportes profesionales",
+        "Historial completo de evaluaciones",
+        "Exportación a PDF",
+    ],
+    gradient: "from-sky-500 to-violet-500",
+};
 
 const PricingPreviewSection: React.FC = () => {
     return (
         <section id="pricing" className="relative py-24 px-6">
-            <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-4xl">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -61,82 +30,63 @@ const PricingPreviewSection: React.FC = () => {
                     className="mb-16 text-center"
                 >
                     <h2 className="mb-4 text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl">
-                        Planes Para{" "}
+                        Una Sola Versión.{" "}
                         <span className="bg-gradient-to-r from-sky-400 to-violet-400 bg-clip-text text-transparent">
-                            Cada Necesidad
+                            Todo Incluido.
                         </span>
                     </h2>
                     <p className="mx-auto max-w-2xl text-lg text-slate-400">
-                        Comienza gratis y escala cuando lo necesites
+                        Creemos en el acceso universal a la seguridad estructural.
                     </p>
                 </motion.div>
 
-                {/* Pricing Cards */}
-                <div className="grid gap-8 md:grid-cols-3">
-                    {plans.map((plan, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: idx * 0.1 }}
-                            whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.2 } }}
-                            className={`relative overflow-hidden rounded-2xl border p-8 transition-all ${plan.popular
-                                    ? "border-sky-500/50 bg-gradient-to-br from-slate-900 to-slate-950 shadow-xl shadow-sky-500/20"
-                                    : "border-slate-800/50 bg-gradient-to-br from-slate-900/50 to-slate-950/50 hover:border-slate-700/50"
-                                }`}
-                        >
-                            {/* Popular Badge */}
-                            {plan.popular && (
-                                <div className="absolute right-6 top-6">
-                                    <span className="rounded-full bg-gradient-to-r from-sky-500 to-violet-500 px-3 py-1 text-xs font-semibold text-white shadow-lg">
-                                        Popular
-                                    </span>
+                {/* Single Pricing Card */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="relative overflow-hidden rounded-3xl border border-sky-500/30 bg-gradient-to-br from-slate-900 to-slate-950 p-8 shadow-2xl shadow-sky-500/10 md:p-12 text-center"
+                >
+                    {/* Badge */}
+                    <div className="absolute right-0 top-0 hidden md:block">
+                        <div className="bg-gradient-to-r from-sky-500 to-violet-500 px-12 py-2 shadow-lg transform rotate-45 translate-x-10 translate-y-6">
+                            <span className="text-xs font-bold text-white tracking-widest uppercase">Gratis</span>
+                        </div>
+                    </div>
+
+                    {/* Plan Info */}
+                    <div className="mb-8">
+                        <h3 className="mb-4 text-3xl font-bold text-slate-100">
+                            {plan.name}
+                        </h3>
+                        <p className="mx-auto max-w-md text-slate-400">{plan.description}</p>
+                    </div>
+
+                    {/* Price */}
+                    <div className="mb-10">
+                        <span className="text-6xl font-bold text-slate-50">
+                            {plan.price}
+                        </span>
+                    </div>
+
+                    {/* Features Grid */}
+                    <div className="mb-10 grid gap-4 text-left sm:grid-cols-2 max-w-2xl mx-auto">
+                        {plan.features.map((feature, i) => (
+                            <div key={i} className="flex items-center gap-3">
+                                <div className={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${plan.gradient}`}>
+                                    <FiCheck className="h-4 w-4 text-white" />
                                 </div>
-                            )}
-
-                            {/* Plan Name */}
-                            <h3 className="mb-2 text-2xl font-bold text-slate-100">
-                                {plan.name}
-                            </h3>
-                            <p className="mb-6 text-sm text-slate-400">{plan.description}</p>
-
-                            {/* Price */}
-                            <div className="mb-6">
-                                <span className="text-5xl font-bold text-slate-50">
-                                    {plan.price}
-                                </span>
-                                {plan.period && (
-                                    <span className="text-lg text-slate-400">{plan.period}</span>
-                                )}
+                                <span className="text-slate-300 font-medium">{feature}</span>
                             </div>
+                        ))}
+                    </div>
 
-                            {/* Features */}
-                            <ul className="mb-8 space-y-3">
-                                {plan.features.map((feature, i) => (
-                                    <li key={i} className="flex items-start gap-3">
-                                        <div
-                                            className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${plan.gradient}`}
-                                        >
-                                            <FiCheck className="h-3 w-3 text-white" />
-                                        </div>
-                                        <span className="text-sm text-slate-300">{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            {/* CTA Button */}
-                            <button
-                                className={`w-full rounded-full py-3 font-semibold transition-all ${plan.popular
-                                        ? "bg-gradient-to-r from-sky-500 to-violet-500 text-white shadow-lg shadow-sky-500/30 hover:scale-105 hover:shadow-xl hover:shadow-sky-500/40"
-                                        : "border border-slate-700 bg-slate-800/50 text-slate-100 hover:bg-slate-800"
-                                    }`}
-                            >
-                                {plan.price === "Contactar" ? "Contactar Ventas" : "Comenzar"}
-                            </button>
-                        </motion.div>
-                    ))}
-                </div>
+                    {/* CTA Button */}
+                    <button className="w-full sm:w-auto rounded-full bg-gradient-to-r from-sky-500 to-violet-500 px-12 py-4 font-bold text-white shadow-lg shadow-sky-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-sky-500/40">
+                        Comenzar Ahora
+                    </button>
+                </motion.div>
             </div>
         </section>
     );
