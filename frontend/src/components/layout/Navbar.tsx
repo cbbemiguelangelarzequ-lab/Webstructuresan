@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FiShield, FiArrowRight, FiUser, FiLogOut } from "react-icons/fi";
+import { FiArrowRight, FiUser, FiLogOut } from "react-icons/fi";
 import { useAuth } from "../../contexts/AuthContext";
 
 const Navbar: React.FC = () => {

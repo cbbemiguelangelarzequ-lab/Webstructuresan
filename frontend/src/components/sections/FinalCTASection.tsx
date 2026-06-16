@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiDownload, FiArrowRight } from "react-icons/fi";
+import { FiDownload } from "react-icons/fi";
 
 const FinalCTASection: React.FC = () => {
     return (
