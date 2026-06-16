@@ -19,7 +19,7 @@ const plan = {
 
 const PricingPreviewSection: React.FC = () => {
     return (
-        <section id="pricing" className="relative py-24 px-6">
+        <section id="pricing" className="relative py-8 px-6">
             <div className="mx-auto max-w-4xl">
                 {/* Header */}
                 <motion.div

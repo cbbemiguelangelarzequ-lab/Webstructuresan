@@ -31,7 +31,7 @@ const testimonials = [
 
 const TestimonialsSection: React.FC = () => {
     return (
-        <section id="testimonials" className="relative py-24 px-6 bg-slate-900/30">
+        <section id="testimonials" className="relative py-8 px-6 bg-slate-900/30">
             <div className="mx-auto max-w-7xl">
                 {/* Header */}
                 <motion.div

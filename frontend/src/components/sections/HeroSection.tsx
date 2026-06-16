@@ -28,7 +28,7 @@ const HeroSection: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/40 to-slate-950/90" />
       </div>
 
-      <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 pt-16 pb-20 sm:px-6 md:flex-row md:items-center lg:px-8 lg:pt-24 lg:pb-28">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-8 sm:px-6 md:flex-row md:items-center lg:px-8">
         {/* Texto */}
         <div className="relative z-10 flex-1 space-y-8">
           <motion.div {...fadeUp(0)}>
@@ -56,24 +56,24 @@ const HeroSection: React.FC = () => {
 
           <motion.div
             {...fadeUp(0.2)}
-            className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4"
+            className="flex flex-col gap-5"
           >
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/auth/register"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/40 hover:from-sky-400 hover:to-indigo-400"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/40 hover:from-sky-400 hover:to-indigo-400 transition-all hover:-translate-y-0.5 whitespace-nowrap"
               >
                 Registrarme como Propietario
                 <FiArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/auth/register?role=profesional"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200/60 bg-slate-900/70 px-6 py-2.5 text-sm font-semibold text-slate-100 hover:border-sky-400 hover:text-sky-300"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-600 bg-slate-900/50 px-8 py-3.5 text-sm font-semibold text-slate-100 hover:border-slate-400 hover:bg-slate-800/80 hover:text-white transition-all hover:-translate-y-0.5 whitespace-nowrap"
               >
                 Soy Profesional
               </Link>
             </div>
-            <p className="text-xs text-slate-200/80 sm:text-[0.78rem]">
+            <p className="text-sm text-slate-300/80">
               Sin costo por ahora. La app móvil se integra con las mismas credenciales.
             </p>
           </motion.div>

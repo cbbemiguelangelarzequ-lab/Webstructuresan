@@ -1,33 +1,39 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Timeline from "../ui/Timeline";
 
 const steps = [
     {
         number: "01",
         title: "Descarga la App",
-        description: "Disponible para iOS y Android. Instalación rápida y gratuita.",
+        description: "Disponible para Android. Instalación rápida y gratuita.",
     },
     {
         number: "02",
-        title: "Escanea el Daño",
-        description: "Toma fotos del problema estructural con tu cámara.",
+        title: "Reporta el Daño",
+        description: "Sube fotos y describe el problema.",
     },
     {
         number: "03",
-        title: "Análisis IA",
-        description: "Recibe un diagnóstico preliminar en segundos.",
+        title: "Conecta con Expertos",
+        description: "Un ingeniero certificado toma tu caso.",
     },
     {
         number: "04",
-        title: "Actúa Informado",
-        description: "Decide si necesitas un profesional o es mantenimiento preventivo.",
+        title: "Inspección Física",
+        description: "Evaluación experta en el lugar.",
+    },
+    {
+        number: "05",
+        title: "Informe por IA",
+        description: "Recibe tu diagnóstico oficial al instante.",
     },
 ];
 
 const HowItWorksSection: React.FC = () => {
     return (
-        <section id="how-it-works" className="relative py-24 px-6 bg-slate-900/30">
+        <section id="how-it-works" className="relative py-8 px-6 bg-slate-900/30">
             <div className="mx-auto max-w-7xl">
                 {/* Header */}
                 <motion.div
@@ -44,7 +50,7 @@ const HowItWorksSection: React.FC = () => {
                         </span>
                     </h2>
                     <p className="mx-auto max-w-2xl text-lg text-slate-400">
-                        Cuatro pasos simples para proteger tu hogar o edificio
+                        Cinco pasos simples para proteger tu hogar o edificio
                     </p>
                 </motion.div>
 
@@ -59,7 +65,7 @@ const HowItWorksSection: React.FC = () => {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="mt-12 text-center"
                 >
-                    <button className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500 px-8 py-3 font-semibold text-white shadow-lg shadow-emerald-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-emerald-500/40">
+                    <Link to="/auth/register" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500 px-8 py-3 font-semibold text-white shadow-lg shadow-emerald-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-emerald-500/40">
                         <span className="relative z-10">Comenzar Ahora</span>
                         <svg
                             className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1"
@@ -75,7 +81,7 @@ const HowItWorksSection: React.FC = () => {
                             />
                         </svg>
                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-cyan-600 opacity-0 transition-opacity group-hover:opacity-100" />
-                    </button>
+                    </Link>
                 </motion.div>
             </div>
         </section>

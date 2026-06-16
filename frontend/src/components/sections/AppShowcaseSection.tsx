@@ -5,7 +5,7 @@ import StatChip from "../ui/StatChip";
 
 const AppShowcaseSection: React.FC = () => {
     return (
-        <section id="showcase" className="relative py-24 px-6">
+        <section id="showcase" className="relative py-8 px-6">
             <div className="mx-auto max-w-7xl">
                 <div className="grid items-center gap-12 lg:grid-cols-2">
                     {/* Left: Content */}
@@ -72,27 +72,20 @@ const AppShowcaseSection: React.FC = () => {
                             <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-pink-500/30 to-orange-500/30 blur-3xl" />
 
                             {/* Phone Frame */}
-                            <div className="relative overflow-hidden rounded-[3rem] border-8 border-slate-900 bg-slate-950 shadow-2xl">
-                                <div className="aspect-[9/19] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
+                            <div className="relative overflow-hidden rounded-[3rem] border-[8px] border-slate-900 bg-slate-950 shadow-2xl">
+                                <div className="relative aspect-[9/19] bg-slate-900">
                                     {/* Notch */}
-                                    <div className="mx-auto mb-6 h-6 w-32 rounded-full bg-slate-950" />
+                                    <div className="absolute left-1/2 top-0 z-20 h-6 w-32 -translate-x-1/2 rounded-b-[1.2rem] bg-slate-900 shadow-sm" />
 
-                                    {/* Screen Content */}
-                                    <div className="space-y-4">
-                                        <div className="h-12 rounded-2xl bg-gradient-to-r from-pink-500/20 to-orange-500/20 backdrop-blur-sm" />
-                                        <div className="h-64 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 p-4">
-                                            <div className="mb-3 h-4 w-24 rounded bg-slate-700" />
-                                            <div className="space-y-2">
-                                                <div className="h-3 w-full rounded bg-slate-700/50" />
-                                                <div className="h-3 w-4/5 rounded bg-slate-700/50" />
-                                                <div className="h-3 w-3/4 rounded bg-slate-700/50" />
-                                            </div>
-                                        </div>
-                                        <div className="grid grid-cols-2 gap-3">
-                                            <div className="h-20 rounded-xl bg-gradient-to-br from-sky-500/20 to-blue-500/20" />
-                                            <div className="h-20 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/20" />
-                                        </div>
-                                    </div>
+                                    {/* Screen Image */}
+                                    <img 
+                                        src="/images/iman.jpeg" 
+                                        alt="StructureScan App"
+                                        className="h-full w-full object-cover object-center"
+                                    />
+                                    
+                                    {/* Inner shadow/ring for realistic screen border */}
+                                    <div className="pointer-events-none absolute inset-0 rounded-[2.2rem] shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] ring-1 ring-inset ring-white/10" />
                                 </div>
                             </div>
                         </div>

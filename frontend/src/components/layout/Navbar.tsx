@@ -25,9 +25,11 @@ const Navbar: React.FC = () => {
     <header className="relative z-20 border-b border-white/5 bg-slate-950/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-indigo-500">
-            <FiShield className="h-5 w-5 text-white" />
-          </div>
+          <img 
+            src="/images/structurescan_logo.png" 
+            alt="StructureScan Logo" 
+            className="h-10 w-10 rounded-full object-cover shadow-sm"
+          />
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-semibold tracking-[0.15em] text-sky-300">
               STRUCTURESCAN

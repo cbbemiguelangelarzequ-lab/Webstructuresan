@@ -15,34 +15,42 @@ import ChatbotFloating from "../components/chat/ChatbotFloating";
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50">
-      <div className="relative overflow-hidden">
-        <GradientBackground />
+    <div className="h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth scroll-pt-20 bg-slate-950 text-slate-50">
+      <GradientBackground />
+      
+      <div className="sticky top-0 z-50">
         <Navbar />
-
-        <main className="relative z-10">
-          <HeroSection />
-          <div id="features">
-            <FeaturesSection />
-          </div>
-          <HowItWorksSection />
-          <div id="about">
-            <AppShowcaseSection />
-          </div>
-          <TestimonialsSection />
-          <div id="pricing">
-            <PricingPreviewSection />
-          </div>
-          <div id="contact">
-            <FinalCTASection />
-          </div>
-        </main>
-
-        <Footer />
-
-        {/* Chat IA flotante */}
-        <ChatbotFloating />
       </div>
+
+      <main className="relative z-10">
+        <div className="snap-start snap-always min-h-[calc(100vh-5rem)] flex flex-col justify-center">
+          <HeroSection />
+        </div>
+        <div id="features" className="snap-start snap-always min-h-[calc(100vh-5rem)] flex flex-col justify-center">
+          <FeaturesSection />
+        </div>
+        <div className="snap-start snap-always min-h-[calc(100vh-5rem)] flex flex-col justify-center">
+          <HowItWorksSection />
+        </div>
+        <div id="about" className="snap-start snap-always min-h-[calc(100vh-5rem)] flex flex-col justify-center">
+          <AppShowcaseSection />
+        </div>
+        <div className="snap-start snap-always min-h-[calc(100vh-5rem)] flex flex-col justify-center">
+          <TestimonialsSection />
+        </div>
+        <div id="pricing" className="snap-start snap-always min-h-[calc(100vh-5rem)] flex flex-col justify-center">
+          <PricingPreviewSection />
+        </div>
+        <div id="contact" className="snap-start snap-always min-h-[calc(100vh-5rem)] flex flex-col justify-center">
+          <FinalCTASection />
+        </div>
+        <div className="snap-start snap-always">
+          <Footer />
+        </div>
+      </main>
+
+      {/* Chat IA flotante */}
+      <ChatbotFloating />
     </div>
   );
 };

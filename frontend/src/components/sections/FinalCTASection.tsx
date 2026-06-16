@@ -4,7 +4,7 @@ import { FiDownload, FiArrowRight } from "react-icons/fi";
 
 const FinalCTASection: React.FC = () => {
     return (
-        <section id="final-cta" className="relative py-24 px-6">
+        <section id="final-cta" className="relative py-8 px-6">
             <div className="mx-auto max-w-7xl">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -51,69 +51,18 @@ const FinalCTASection: React.FC = () => {
                             transition={{ duration: 0.6, delay: 0.3 }}
                             className="flex flex-col items-center justify-center gap-4 sm:flex-row"
                         >
-                            <button className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-sky-500 via-violet-500 to-pink-500 px-8 py-4 font-semibold text-white shadow-lg shadow-sky-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-sky-500/40">
+                            <a 
+                                href="/downloads/structurescan.apk"
+                                download="StructureScan.apk"
+                                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-sky-500 via-violet-500 to-pink-500 px-8 py-4 font-semibold text-white shadow-lg shadow-sky-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-sky-500/40"
+                            >
                                 <FiDownload className="relative z-10 h-5 w-5" />
                                 <span className="relative z-10">Descargar Gratis</span>
                                 <div className="absolute inset-0 bg-gradient-to-r from-sky-600 via-violet-600 to-pink-600 opacity-0 transition-opacity group-hover:opacity-100" />
-                            </button>
-
-                            <button className="group inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/50 px-8 py-4 font-semibold text-slate-100 backdrop-blur-sm transition-all hover:border-slate-600 hover:bg-slate-800/50">
-                                <span>Ver Demo</span>
-                                <FiArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                            </button>
+                            </a>
                         </motion.div>
 
-                        {/* Trust Indicators */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400"
-                        >
-                            <div className="flex items-center gap-2">
-                                <svg
-                                    className="h-5 w-5 text-emerald-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                                <span>Sin tarjeta de crédito</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <svg
-                                    className="h-5 w-5 text-emerald-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                                <span>Cancela cuando quieras</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <svg
-                                    className="h-5 w-5 text-emerald-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                                <span>Soporte 24/7</span>
-                            </div>
-                        </motion.div>
+                        {/* Removed Trust Indicators */}
                     </div>
                 </motion.div>
             </div>

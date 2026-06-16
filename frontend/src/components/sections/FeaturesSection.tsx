@@ -31,7 +31,7 @@ const features = [
 
 const FeaturesSection: React.FC = () => {
     return (
-        <section id="features" className="relative py-24 px-6">
+        <section id="features" className="relative py-8 px-6">
             <div className="mx-auto max-w-7xl">
                 {/* Header */}
                 <motion.div
